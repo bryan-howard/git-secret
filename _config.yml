@@ -1,0 +1,17 @@
+# Site settings
+title: git-secret
+email: mail@sobolevn.me
+description: A bash-tool to store your private data inside a git repository.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "git-secret.io" # the base hostname & protocol for your site
+
+# Github links:
+github_username: sobolevn
+github_changelog: "https://github.com/sobolevn/git-secret/blob/master/CHANGELOG.md"
+
+# Seo settings:
+plugins:
+  - jekyll-seo-tag
+
+# Build settings
+markdown: kramdown
