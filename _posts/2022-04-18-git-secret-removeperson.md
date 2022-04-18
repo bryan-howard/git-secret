@@ -1,3 +1,10 @@
+---
+layout: post
+title: 'git-secret-removeperson'
+date: 2022-04-18 20:42:42 +0000
+permalink: git-secret-removeperson
+categories: command
+---
 git-secret-removeperson - removes user's public key from repo keyring.
 ==================================================================================
 

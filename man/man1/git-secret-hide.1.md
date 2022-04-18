@@ -1,4 +1,4 @@
-git-secret-hide - encrypts all added files with the inner keyring.
+git-secret-hide - encrypts all added files with repo keyring.
 ==================================================================
 
 ## SYNOPSIS
@@ -7,15 +7,18 @@ git-secret-hide - encrypts all added files with the inner keyring.
 
 
 ## DESCRIPTION
-`git-secret-hide` creates an encrypted version (typically called `filename.txt.secret`)
-of each file added by `git-secret-add` command.
-Now anyone enabled via `git secret tell` can can decrypt these files. Under the hood,
-`git-secret` uses the keyring in `.gitsecret/keys` and user's secret keys to decrypt the files.
+`git-secret-hide`  - writes an encrypted version of each file added by `git-secret-add` command.
+
+Then anyone enabled via `git secret tell` can decrypt these files. 
+
+Under the hood, `git-secret` uses the keyring of public keys in `.gitsecret/keys` to _encrypt_ files,
+encrypted versions are typically called `filename.txt.secret`.
+
+Later permitted users can use their secret key (typically from their home directory) to _decrypt_ files.
 
 It is recommended to encrypt (or re-encrypt) all the files in a `git-secret` repo each
-time `git secret hide` is run.
-
-Otherwise the keychain (the one stored in `.gitsecret/keys/*.gpg`),
+time `git secret hide` is run.  
+Otherwise the keyring (the one stored in `.gitsecret/keys/*.gpg`),
 may have changed since the last time the files were encrypted, and it's possible
 to create a state where the users in the output of `git secret whoknows`
 may not be able to decrypt the some files in the repo, or may be able decrypt files
@@ -57,7 +60,7 @@ not be been modified since the last time they were encrypted.
 
 ## MANUAL
 
-Run `man git-secret-hide` to see this note.
+Run `man git-secret-hide` to see this document.
 
 
 ## SEE ALSO
